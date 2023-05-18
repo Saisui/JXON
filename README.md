@@ -45,4 +45,8 @@ JXON.new{|**kwargs|
   tmp2.fill(host: "www.example.com",
     id: "account", pwd: "password", **kwargs)
 }
+
+client = tmp.dup(host: "www.example.com", id: "account", pwd: "password")
+client.fill(motion:"go")
+
 ```
