@@ -1,13 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "jxon/version"
-
-require 'fairylib'
-
 
 # :startdoc:
 
-class JXON
+class Jxon
   #
   # A dynamically json template.
   # For many usage, such as RESTful applications, Json body
