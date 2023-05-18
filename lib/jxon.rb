@@ -87,30 +87,3 @@ class Hash
     {**self, **ano}
   end
 end
-
-# en-us: usage example
-# zh-cn: 示例用法
-tmp2 = JXON.new {|**kwargs|
-  stkws, body = * kwargs.exceptlast(:proxy,:host,:path,:req)
-  #
-  # separate request headers and body.
-  # 分割两部分，请求头和请求体分开。
-  #
-  return {
-    **stkws,
-    post:{
-      **body
-    }
-  }
-}
-
-JXON.new{|proxy, path, req, **kwargs|
-  tmp.fill(proxy, "www.example.com", path, req,
-    "account", "password", **kwargs)
-}
-
-
-JXON.new{|**kwargs|
-  tmp2.fill(host: "www.example.com",
-    id: "account", pwd: "password", **kwargs)
-}
