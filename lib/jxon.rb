@@ -45,7 +45,7 @@ class JXON
     @blk.call(*args, **kwargs)
   end
 
-  def dup *args, **kwargs
+  def ref *args, **kwargs
     #
     # usage example:
     #
@@ -55,7 +55,7 @@ class JXON
     #                 d:{
     #                     **kwargs}}}}
     #
-    #    client = template.dup(1, acc:"yes", password: "no")
+    #    client = template.ref(1, acc:"yes", password: "no")
     #    client.fill(2, 3, motion: "go")
     #
     self.class.new{|*as, **kws|

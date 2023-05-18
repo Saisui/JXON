@@ -47,12 +47,12 @@ JXON.new{|**kwargs|
     id: "account", pwd: "password", **kwargs)
 }
 ```
-## JXON#dup 方法
+## JXON#ref 方法
 
 填充模板一部分内容，克隆为另外一份模板（会引用原模板）
 
 ```ruby
-client = tmp.dup(host: "www.example.com", id: "account", pwd: "password")
+client = tmp.ref(host: "www.example.com", id: "account", pwd: "password")
 client.fill(motion:"go")
 
 ```
