@@ -7,6 +7,20 @@ gem intall jxon
 usage example
 示例用法
 ```ruby
+tmp = JXON.new {|proxy, host, path, req, id, pwd, **kwargs|
+  {
+    proxy: proxy,
+    host: host,
+    path: path,
+    req: req,
+    post:{
+      id: id,
+      pwd: pwd,
+      **kwargs,
+    }
+  }
+}
+
 tmp2 = JXON.new {|**kwargs|
   stkws, body = * kwargs.exceptlast(:proxy,:host,:path,:req)
   #

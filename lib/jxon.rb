@@ -3,7 +3,7 @@
 
 # :startdoc:
 
-class Jxon
+class JXON
   #
   # A dynamically json template.
   # For many usage, such as RESTful applications, Json body
@@ -46,25 +46,24 @@ class Jxon
   end
 
   def dup *args, **kwargs
+    #
+    # usage example:
+    #
+    #    template = JXON.new{|a,b,c, **kwargs|
+    #      return {
+    #               a:a, b:b, c:c,
+    #                 d:{
+    #                     **kwargs}}}}
+    #
+    #    client = template.dup(1, acc:"yes", password: "no")
+    #    client.fill(2, 3, motion: "go")
+    #
     self.class.new{|*as, **kws|
-      self.fill(*args, **kwargs)
+      self.fill(*args, *as, **kws, **kwargs)
     }
   end
 end
 
-tmp = JXON.new {|proxy, host, path, req, id, pwd, **kwargs|
-  {
-    proxy: proxy,
-    host: host,
-    path: path,
-    req: req,
-    post:{
-      id: id,
-      pwd: pwd,
-      **kwargs,
-    }
-  }
-}
 
 class Hash
   def get *keys
