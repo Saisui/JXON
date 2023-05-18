@@ -79,7 +79,7 @@ class Hash
   #   hsh
   # end
   def exceptlast(*keys)
-    '''[except of hash, last of exceptions]'''
+    # [except of hash, last of exceptions]
     [self.get(*keys), self.except(*keys)]
   end
   def concat ano
