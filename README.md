@@ -5,6 +5,7 @@
 gem intall jxon
 ```
 usage example
+
 示例用法
 ```ruby
 tmp = JXON.new {|proxy, host, path, req, id, pwd, **kwargs|
@@ -45,7 +46,12 @@ JXON.new{|**kwargs|
   tmp2.fill(host: "www.example.com",
     id: "account", pwd: "password", **kwargs)
 }
+```
+## JXON#dup 方法
 
+填充模板一部分内容，克隆为另外一份模板（会引用原模板）
+
+```ruby
 client = tmp.dup(host: "www.example.com", id: "account", pwd: "password")
 client.fill(motion:"go")
 
